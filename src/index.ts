@@ -31,7 +31,7 @@ function getDefaults({
 }: TemplaterOptions): TemplaterOptions {
   return {
     name,
-    scope: scope.length ? `${scope}/${name}` : name,
+    scope: scope.length ? `${scope}/` : '',
     description,
     ...props
   };
@@ -93,7 +93,8 @@ export function templater(cwd: string, options: TemplaterOptions): void {
 
     const content = mustache.render(template, {
       ...options,
-      version: lerna.version
+      version: lerna.version,
+      repoDir: `${options.packages}/${options.name}`
     });
     writeFileSync(file, content);
   });
