@@ -31,7 +31,9 @@ describe('Test index', () => {
     };
 
     const expected = 'Could not find lerna.json!';
-    expect(() => {templater(join(__dirname, '..'), options)}).toThrow(expected);
+    expect(() => {
+      templater(join(__dirname, '..'), options);
+    }).toThrow(expected);
   });
 
   test('should copy files', () => {
