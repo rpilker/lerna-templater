@@ -7,15 +7,11 @@ type ArgvType = {
   [x: string]: unknown;
   _: (string | number)[];
   $0: string;
-};
+} & TemplaterOptions;
 
 ((argv: ArgvType): void => {
   try {
-    const options: TemplaterOptions = {
-      name: 'name'
-    };
-
-    templater(process.cwd(), options);
+    templater(process.cwd(), argv);
   } catch (error) {
     console.log(error.message);
     process.exit(1);
@@ -24,27 +20,32 @@ type ArgvType = {
   process.exit();
 })(
   yargs(process.argv.slice(2))
-    .option('n', {
-      alias: 'name',
+    .option('name', {
+      alias: 'n',
       demandOption: true,
-      describe: 'The name of the new package'
+      describe: 'The name of the new package',
+      type: 'string'
     })
-    .option('d', {
-      alias: 'description',
+    .option('description', {
+      alias: 'd',
       default: '',
-      describe: 'The description of the new package'
+      describe: 'The description of the new package',
+      type: 'string'
     })
-    .option('s', {
-      alias: 'scope',
-      describe: 'The scope of the new package'
+    .option('scope', {
+      alias: 's',
+      describe: 'The scope of the new package',
+      type: 'string'
     })
-    .options('p', {
-      alias: 'packages',
-      describe: 'The path of the destination folder'
+    .options('packages', {
+      alias: 'p',
+      describe: 'The path of the destination folder',
+      type: 'string'
     })
-    .options('t', {
-      alias: 'template',
-      describe: 'The path of the template folder'
+    .options('template', {
+      alias: 't',
+      describe: 'The path of the template folder',
+      type: 'string'
     })
     .help().argv
 );
