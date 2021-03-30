@@ -31,16 +31,38 @@ function getDefaults({
 }: TemplaterOptions): TemplaterOptions {
   return {
     name,
-    scope: scope.length ? `${scope}/` : '',
+    scope: scope.length ? `${scope}/` : undefined,
     description,
     ...props
   };
 }
 
 function getLerna(cwd: string): Lerna {
-  const lerna = readJSONSync(join(cwd, 'lerna.json')) as Lerna;
+  const path = join(cwd, 'lerna.json');
+
+  if (!existsSync(path)) {
+    throw new Error('Could not find lerna.json!');
+  }
+
+  const lerna = readJSONSync(path) as Lerna;
   lerna.packages = lerna.packages.map((p) => p.replace('/*', ''));
   return lerna;
+}
+
+function getScope(cwd: string): string {
+  const path = join(cwd, 'package.json');
+
+  if (!existsSync(path)) return '';
+
+  const name = readJSONSync(path).name as string;
+
+  if (!name) return '';
+
+  const array = name.split('/');
+
+  if (array.length < 2) return '';
+
+  return array[0];
 }
 
 function copyTemplate(cwd: string, template: string, target: string): boolean {
@@ -61,6 +83,10 @@ function getMustacheFiles(target: string): string[] {
 export function templater(cwd: string, options: TemplaterOptions): void {
   options = getDefaults(options);
   const lerna = getLerna(cwd);
+
+  if (!options.scope) {
+    options.scope = getScope(cwd);
+  }
 
   if (!options.packages) {
     options.packages = lerna.packages[0];
