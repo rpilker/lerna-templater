@@ -43,12 +43,18 @@
     "docs": "typedoc --out docs src",
     "prepublishOnly": "npm run build",
     "release": "standard-version",
-    "postrelease": "git push --follow-tags origin main"
+    "postrelease": "git push --follow-tags origin main",
+    "prestart": "npm run build",
+    "start": "node dist/cli.js --help"
   },
   "dependencies": {
+    "@types/fs-extra": "^9.0.9",
+    "@types/mustache": "^4.1.1",
+    "@types/rimraf": "^3.0.0",
     "fs-extra": "^9.1.0",
     "mustache": "^4.2.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "yargs": "^16.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
