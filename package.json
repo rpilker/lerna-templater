@@ -1,0 +1,55 @@
+{
+  "name": "lerna-templater",
+  "description": "Generates Package from Template for a Lerna Monoreposy",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Róbert Darida",
+  "keywords": [
+    "lerna",
+    "package",
+    "generator",
+    "template"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "lerna-templater": "dist/cli.js"
+  },
+  "homepage": "https://github.com/rdarida/lerna-templater#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdarida/lerna-templater.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rdarida/lerna-templater/issues"
+  },
+  "scripts": {
+    "format": "echo \"Error: no test specified\" && exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "fs-extra": "^9.1.0",
+    "mustache": "^4.2.0",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.14.37",
+    "husky": "^4.3.8",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.4",
+    "typescript": "^4.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "post-commit": "npm run format"
+    }
+  }
+}
