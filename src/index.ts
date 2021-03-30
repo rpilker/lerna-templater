@@ -91,7 +91,10 @@ export function templater(cwd: string, options: TemplaterOptions): void {
       flag: 'r'
     });
 
-    const content = mustache.render(template, {...options, version: lerna.version});
+    const content = mustache.render(template, {
+      ...options,
+      version: lerna.version
+    });
     writeFileSync(file, content);
   });
 

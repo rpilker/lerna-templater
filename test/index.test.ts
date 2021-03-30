@@ -54,7 +54,9 @@ describe('Test index', () => {
     };
 
     mkdirSync(join(DIST, options.name));
-    expect(() => {templater(__dirname, options)}).toThrow('The package already exists!');
+    expect(() => {
+      templater(__dirname, options);
+    }).toThrow('The package already exists!');
   });
 
   test('should handle package parameter', () => {
@@ -88,7 +90,9 @@ describe('Test index', () => {
     };
 
     const expected = `The template folder is not found!\n${options.template}`;
-    expect(() => { templater(__dirname, options) }).toThrow(expected);
+    expect(() => {
+      templater(__dirname, options);
+    }).toThrow(expected);
   });
 
   afterAll(() => {
