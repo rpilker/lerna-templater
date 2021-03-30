@@ -1,2 +1,2 @@
 # lerna-templater
-Generates Package from Template for a Lerna Monoreposy
+Generates Package from Template for a Lerna Monorepo
