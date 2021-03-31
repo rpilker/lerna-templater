@@ -8,8 +8,7 @@ on:
       - 'src/**'
       - 'test/**'
       - 'README.md'
-    tags:
-      - 'v1'
+    types: [labeled]
 
 jobs:
   release:
