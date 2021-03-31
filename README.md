@@ -41,7 +41,7 @@ npm run create -- -n "Name of the new package" -d "Description of the new packag
 
 ## API
 ### `templater(cwd, optioins)`
-TBD
+Generates a new package from **`cwd`/<options.template>** folder into **<options.packages>/<options.name>** folder.
 
 ### `TemplaterOptions`
 - `name` string required  
