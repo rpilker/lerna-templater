@@ -111,7 +111,7 @@ The **lerna-templater** uses [Mustache.js](https://npmjs.org/packages/mustache) 
   }
   ```
 
-### Output
+#### Output
 Running the  `npx lerna-templater -n "example-newpackage" -d "Description for the new example package"` command will result this output:
 - **packages/example-newpackage** directory
 - **package.json** and **README.md** in the *packages/example-newpackage* directory
