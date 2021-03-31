@@ -8,14 +8,18 @@
 
 ## Install
 ```
-> npm i -D lerna-templater
+npm i -D lerna-templater
 ```
 
 ## Usage
-```json
+```js
 "scripts": {
   "create": "lerna-templater"
 }
+```
+
+```
+npm run create -- -n "Name of the new package" -d "Description of the new package"
 ```
 
 ## Resources
