@@ -44,16 +44,19 @@ npm run create -- -n "Name of the new package" -d "Description of the new packag
 Generates a new package from **`cwd`/`options.template`** folder into **`options.packages`/`options.name`** folder.
 
 ### `TemplaterOptions`
-- `name` string required  
+- `name` **string**, **required**  
   TBD
-- `description` string  
+- `description` **string**  
   TBD
-- `scope` string  
+- `scope` **string**  
   TBD
-- `packages` string  
+- `packages` **string**  
   TBD
-- `template` string  
+- `template` **string**  
   TBD
+
+### [Mustache templating](https://npmjs.org/packages/mustache)
+TBD
 
 ### Example
 TBD
