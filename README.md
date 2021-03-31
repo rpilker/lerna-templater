@@ -44,15 +44,15 @@ npm run create -- -n "Name of the new package" -d "Description of the new packag
 TBD
 
 ### `TemplaterOptions`
-- `name` string required
+- `name` string required  
   TBD
-- `description` string
+- `description` string  
   TBD
-- `scope` string
+- `scope` string  
   TBD
-- `packages` string
+- `packages` string  
   TBD
-- `template` string
+- `template` string  
   TBD
 
 ### Example
