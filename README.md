@@ -44,7 +44,11 @@ npm run create -- -n "Name of the new package" -d "Description of the new packag
 TBD
 
 ### `TemplaterOptions`
-TBD
+- `name`
+- `description`
+- `scope`
+- `packages`
+- `template`
 
 ## Resources
 - [Example](https://github.com/rdarida/base-scripts)
