@@ -44,14 +44,22 @@ npm run create -- -n "Name of the new package" -d "Description of the new packag
 TBD
 
 ### `TemplaterOptions`
-- `name`
-- `description`
-- `scope`
-- `packages`
-- `template`
+- `name` string required
+  TBD
+- `description` string
+  TBD
+- `scope` string
+  TBD
+- `packages` string
+  TBD
+- `template` string
+  TBD
+
+### Example
+TBD
 
 ## Resources
-- [Example](https://github.com/rdarida/base-scripts)
+- [Example repository](https://github.com/rdarida/base-scripts)
 
 ## License
 The **lerna-templater** is released under the MIT license.
