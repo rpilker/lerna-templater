@@ -69,7 +69,15 @@ The **lerna-templater** uses [Mustache.js](https://npmjs.org/packages/mustache) 
 - `{{{repoDir}}}` -- The relative path of the new package in the repository.
 
 ### Example
-TBD
+#### Directory structure
+    .
+    ├── __template__/
+    |   ├── package.json.mustache
+    |   └── README.md.mustache
+    ├── packages/
+    ├── lerna.json
+    └── package.json
+
 
 ## Resources
 - [Example repository](https://github.com/rdarida/base-scripts)
