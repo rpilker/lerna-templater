@@ -43,6 +43,8 @@ jobs:
       - name: Deploy documentation
         uses: rdarida/simple-github-pages-deploy-action@v1
         with:
+          git-user: 'rdarida'
+          git-email: 'rdarida@users.noreply.github.com'
           git-base-folder: 'docs'
           commit-message: 'Automatic deploy'
 
