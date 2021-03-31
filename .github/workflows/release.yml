@@ -4,9 +4,12 @@ on:
   push:
     branches:
       - 'main'
-#    paths:
-#      - 'src/**'
-#      - 'test/**'
+    paths:
+      - 'src/**'
+      - 'test/**'
+      - 'README.md'
+    tags:
+      - 'v1'
 
 jobs:
   release:
