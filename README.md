@@ -78,8 +78,8 @@ The **lerna-templater** uses [Mustache.js](https://npmjs.org/packages/mustache) 
     ├── lerna.json
     └── package.json
 
-#### Mustache files
-- **package.json.mustache**:  
+#### Content of the files
+- \_\_template\_\_/**package.json.mustache**:  
   ```json
   {
     "name": "{{{scope}}}{{{name}}}",
@@ -90,12 +90,29 @@ The **lerna-templater** uses [Mustache.js](https://npmjs.org/packages/mustache) 
     }
   }
   ```
-- **README.md.mustache**:  
+- \_\_template\_\_/**README.md.mustache**:  
   ```md
   # {{{name}}}
   {{{description}}}
   ```
+- **lerna.json**:  
+  ```json
+  {
+    "packages": [
+      "packages/*"
+    ],
+    "version": "0.0.0"
+  }
+  ```
+- **package.json**:  
+  ```json
+  {
+    "name": "@examplescope/examplename"
+  }
+  ```
 
+### Output
+If we run the `npx lerna-templater -n "
 ## Resources
 - [Example repository](https://github.com/rdarida/base-scripts)
 
