@@ -5,10 +5,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'src/**'
-      - 'test/**'
-      - 'README.md'
-    types: [labeled]
+      - 'CHANGELOG.md'
 
 jobs:
   release:
