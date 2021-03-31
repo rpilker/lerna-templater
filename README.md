@@ -7,6 +7,7 @@
 <hr>
 
 ## Installing
+You can get **`lerna-templater`** via **[npm](https://npmjs.org/package/lerna-templater)**.
 ```
 npm i -D lerna-templater
 ```
