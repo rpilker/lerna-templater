@@ -33,6 +33,7 @@ npm run create -- -n "Name of the new package" -d "Description of the new packag
 TBD
 
 ## Resources
+- [Example](https://github.com/rdarida/base-scripts)
 
 ## License
 The **lerna-templater** is released under the MIT license.
