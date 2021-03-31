@@ -12,6 +12,7 @@ npm i -D lerna-templater
 ```
 
 ## Usage
+### API
 ```
 npx lerna-templater -n "Name of the new package" -d "Description of the new package"
 ```
@@ -27,6 +28,9 @@ or
 ```
 npm run create -- -n "Name of the new package" -d "Description of the new package"
 ```
+
+### Options
+TBD
 
 ## Resources
 
