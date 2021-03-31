@@ -56,8 +56,8 @@ Generates a new package from **`cwd`/`options.template`** directory into **`cwd`
 - **`template`** **string**, **optional**  
   The relative path of the template directory. Default values is *\_\_template\_\_*.
 
-### [Mustache templating](https://npmjs.org/packages/mustache)
-The **lerna-templater** uses Mustache.js for templating. If the *template* directory contains files which ends with **.mustache**, the templater will render them with Mustache.js. After the rendering, the **.mustache** extension will be removed from the filename. For example: `package.json.mustache` will be saved as `package.json`.
+### Mustache templating
+The **lerna-templater** uses [Mustache.js](https://npmjs.org/packages/mustache) for templating. If the *template* directory contains files which ends with **.mustache**, the templater will render them with Mustache.js. After the rendering, the **.mustache** extension will be removed from the filename. For example: `package.json.mustache` will be saved as `package.json`.
 
 #### Available tags:
 - `{{{name}}}` -- The name of the new package.
