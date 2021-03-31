@@ -78,6 +78,23 @@ The **lerna-templater** uses [Mustache.js](https://npmjs.org/packages/mustache) 
     ├── lerna.json
     └── package.json
 
+#### Mustache files
+- **package.json.mustache**:  
+  ```json
+  {
+    "name": "{{{scope}}}{{{name}}}",
+    "description": "{{{description}}}",
+    "version": "{{{version}}}",
+    "repository": {
+      "directory": "{{{repoDir}}}"
+    }
+  }
+  ```
+- **README.md.mustache**:  
+  ```md
+  # {{{name}}}
+  {{{description}}}
+  ```
 
 ## Resources
 - [Example repository](https://github.com/rdarida/base-scripts)
