@@ -57,7 +57,7 @@ Generates a new package from **`cwd`/`options.template`** directory into **`cwd`
   The path of the template directory. Default values is *\_\_template\_\_*.
 
 ### [Mustache templating](https://npmjs.org/packages/mustache)
-TBD
+The **`lerna-templater`** uses Mustache.js for templating. If the *template* directory contains files which ends with **.mustache**, the templater will render it with Mustache.js.
 
 ### Example
 TBD
