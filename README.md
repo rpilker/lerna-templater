@@ -39,9 +39,11 @@ or
 npm run create -- -n "Name of the new package" -d "Description of the new package"
 ```
 
-### API
+## API
+### `templater(cwd, optioins)`
+TBD
 
-### Options
+### `TemplaterOptions`
 TBD
 
 ## Resources
