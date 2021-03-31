@@ -1,6 +1,10 @@
 <h1 align="center">lerna-templater</h1>
 <p align="center">Generates Package from Template for a Lerna Monorepo</p>
 <p align="center">
+  <a href="https://github.com/rdarida/lerna-templater/actions/workflows/release.yml" target="_blank" alt="GitHub Actions">
+    <img src="https://github.com/rdarida/lerna-templater/actions/workflows/release.yml/badge.svg" alt="Release">
+  </a>
+  
   <a href="https://sonarcloud.io/dashboard?id=rdarida_lerna-templater" target="_blank" alt="SonarCloud">
     <img src="https://sonarcloud.io/api/project_badges/measure?project=rdarida_lerna-templater&metric=coverage" alt="coverage">
   </a>
