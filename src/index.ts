@@ -11,10 +11,15 @@ import mustache from 'mustache';
 import { sync as rimraf } from 'rimraf';
 
 export type TemplaterOptions = {
+  /** The name of the new package. */
   name: string;
-  scope?: string;
+  /** The description of the new pacakge. */
   description?: string;
+  /** The scope of the new package.  */
+  scope?: string;
+  /** The path of the package (output) directory. */
   packages?: string;
+  /** The path of the template (input) directory. */
   template?: string;
 };
 
@@ -80,6 +85,12 @@ function getMustacheFiles(target: string): string[] {
   return readdirSync(target).filter((f) => f.endsWith('.mustache'));
 }
 
+/**
+ * Generates a new package from cwd/options.template directory into
+ * cwd/options.packages/options.name directory.
+ * @param cwd The current working directory.
+ * @param options The options for templater.
+ */
 export function templater(cwd: string, options: TemplaterOptions): void {
   options = getDefaults(options);
   const lerna = getLerna(cwd);

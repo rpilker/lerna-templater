@@ -13,7 +13,7 @@ npm i -D lerna-templater
 ```
 
 ## Usage
-### As Import
+### As an import
 ```ts
 import { TemplaterOptions, templater } from 'lerna-template';
 
@@ -23,7 +23,7 @@ import { TemplaterOptions, templater } from 'lerna-template';
  */
 templater(cwd, options);
 ```
-### As Commandline Tool
+### As a commandline tool
 ```
 npx lerna-templater -n "Name of the new package" -d "Description of the new package"
 ```
