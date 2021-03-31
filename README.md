@@ -41,7 +41,7 @@ npm run create -- -n "Name of the new package" -d "Description of the new packag
 
 ## API
 ### `templater(cwd, optioins)`
-Generates a new package from **`cwd`/`options.template`** folder into **`cwd`/`options.packages`/`options.name`** folder.
+Generates a new package from **`cwd`/`options.template`** directory into **`cwd`/`options.packages`/`options.name`** directory. The **`cwd`** argument is the current working directory.
 
 ### `TemplaterOptions`
 - **`name`** **string**, **required**  
@@ -51,9 +51,9 @@ Generates a new package from **`cwd`/`options.template`** folder into **`cwd`/`o
 - **`scope`** **string**, **optional**  
   The scope of the new package. Default value is the scope of the *main package.json*.
 - **`packages`** **string**, **optional**  
-  The path of the packages folder. Default value is the first element of the *lerna.json's packages array*.
+  The path of the packages directory. Default value is the first element of the *lerna.json's packages array*.
 - **`template`** **string**, **optional**  
-  The path of the template folder. Default values is *\_\_template\_\_*.
+  The path of the template directory. Default values is *\_\_template\_\_*.
 
 ### [Mustache templating](https://npmjs.org/packages/mustache)
 TBD
