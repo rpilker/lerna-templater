@@ -52,9 +52,9 @@ Generates a new package from **`cwd`/`options.template`** directory into **`cwd`
 - **`scope`** **string**, **optional**  
   The scope of the new package. Default value is the scope of the *main package.json*.
 - **`packages`** **string**, **optional**  
-  The path of the packages directory. Default value is the first element of the *lerna.json's packages array*.
+  The relative path of the packages directory. Default value is the first element of the *lerna.json's packages array*.
 - **`template`** **string**, **optional**  
-  The path of the template directory. Default values is *\_\_template\_\_*.
+  The relative path of the template directory. Default values is *\_\_template\_\_*.
 
 ### [Mustache templating](https://npmjs.org/packages/mustache)
 The **lerna-templater** uses Mustache.js for templating. If the *template* directory contains files which ends with **.mustache**, the templater will render them with Mustache.js. After the rendering, the **.mustache** extension will be removed from the filename. For example: `package.json.mustache` will be saved as `package.json`.
