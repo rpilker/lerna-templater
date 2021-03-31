@@ -45,15 +45,15 @@ Generates a new package from **`cwd`/`options.template`** folder into **`options
 
 ### `TemplaterOptions`
 - `name` **string**, **required**  
-  TBD
-- `description` **string**  
-  TBD
-- `scope` **string**  
-  TBD
-- `packages` **string**  
-  TBD
-- `template` **string**  
-  TBD
+  The name of the new package
+- `description` **string**, **optional**  
+  The description of the new package.
+- `scope` **string**, **optional**  
+  The scope of the new package. Default value is the scope of the **main package.json**.
+- `packages` **string**, **optional**  
+  The path of the packages folder. Default value is the first element of the **lerna.json's packages array**.
+- `template` **string**, **optional**  
+  The path of the template folder. Default values is **__template__**.
 
 ### [Mustache templating](https://npmjs.org/packages/mustache)
 TBD
