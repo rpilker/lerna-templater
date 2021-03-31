@@ -9,6 +9,7 @@ import {
 } from 'fs-extra';
 import mustache from 'mustache';
 import { sync as rimraf } from 'rimraf';
+import { getScope } from './get-scope';
 
 export type TemplaterOptions = {
   /** The name of the new package. */
@@ -52,22 +53,6 @@ function getLerna(cwd: string): Lerna {
   const lerna = readJSONSync(path) as Lerna;
   lerna.packages = lerna.packages.map((p) => p.replace('/*', ''));
   return lerna;
-}
-
-function getScope(cwd: string): string {
-  const path = join(cwd, 'package.json');
-
-  if (!existsSync(path)) return '';
-
-  const name = readJSONSync(path).name as string;
-
-  if (!name) return '';
-
-  const array = name.split('/');
-
-  if (array.length < 2) return '';
-
-  return array[0];
 }
 
 function copyTemplate(cwd: string, template: string, target: string): boolean {
