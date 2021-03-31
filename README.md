@@ -6,7 +6,7 @@
 </p>
 <hr>
 
-## Install
+## Installing
 ```
 npm i -D lerna-templater
 ```
@@ -19,7 +19,7 @@ npx lerna-templater -n "Name of the new package" -d "Description of the new pack
 
 or
 
-```js
+```javascript
 "scripts": {
   "create": "lerna-templater"
 }
