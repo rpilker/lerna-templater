@@ -12,14 +12,20 @@ npm i -D lerna-templater
 ```
 
 ## Usage
-### API
+### As Import
+```ts
+import templater from 'lerna-template';
+
+templater(cwd, options)
+```
+### As Commandline Tool
 ```
 npx lerna-templater -n "Name of the new package" -d "Description of the new package"
 ```
 
 or
 
-```js
+```json
 "scripts": {
   "create": "lerna-templater"
 }
@@ -28,6 +34,8 @@ or
 ```
 npm run create -- -n "Name of the new package" -d "Description of the new package"
 ```
+
+### API
 
 ### Options
 TBD
