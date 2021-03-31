@@ -12,6 +12,12 @@ npm i -D lerna-templater
 ```
 
 ## Usage
+```
+npx lerna-templater -n "Name of the new package" -d "Description of the new package"
+```
+
+or
+
 ```js
 "scripts": {
   "create": "lerna-templater"
