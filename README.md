@@ -14,9 +14,13 @@ npm i -D lerna-templater
 ## Usage
 ### As Import
 ```ts
-import templater from 'lerna-template';
+import { TemplaterOptions, templater } from 'lerna-template';
 
-templater(cwd, options)
+/**
+ * @param {string} cwd The current working directory.
+ * @param {TemplaterOptions} options The options for templater.
+ */
+templater(cwd, options);
 ```
 ### As Commandline Tool
 ```
