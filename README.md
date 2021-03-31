@@ -53,7 +53,7 @@ Generates a new package from **`cwd`/`options.template`** folder into **`options
 - **`packages`** **string**, **optional**  
   The path of the packages folder. Default value is the first element of the *lerna.json's packages array*.
 - **`template`** **string**, **optional**  
-  The path of the template folder. Default values is *__template__*.
+  The path of the template folder. Default values is *\_\_template\_\_*.
 
 ### [Mustache templating](https://npmjs.org/packages/mustache)
 TBD
