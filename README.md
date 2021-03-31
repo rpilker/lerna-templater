@@ -19,7 +19,7 @@ npx lerna-templater -n "Name of the new package" -d "Description of the new pack
 
 or
 
-```javascript
+```js
 "scripts": {
   "create": "lerna-templater"
 }
