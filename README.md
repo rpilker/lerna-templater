@@ -29,3 +29,6 @@ npm run create -- -n "Name of the new package" -d "Description of the new packag
 ```
 
 ## Resources
+
+## License
+The **lerna-templater** is released under the MIT license.
