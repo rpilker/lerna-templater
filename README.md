@@ -107,12 +107,31 @@ The **lerna-templater** uses [Mustache.js](https://npmjs.org/packages/mustache) 
 - **package.json**:  
   ```json
   {
-    "name": "@examplescope/examplename"
+    "name": "@examplescope/example-monorepo"
   }
   ```
 
 ### Output
-If we run the `npx lerna-templater -n "
+Running the  `npx lerna-templater -n "example-newpackage" -d "Description for the new example package"` command will result this output:
+- **packages/example-newpackage** directory
+- **package.json** and **README.md** in the *packages/example-newpackage* directory
+- package.json:  
+  ```json
+  {
+    "name": "@examplescope/example-newpackage",
+    "description": "Description for the new example package",
+    "version": "0.0.0",
+    "repository": {
+      "directory": "packages/example-newpackage"
+    }
+  }
+  ```
+- README.md:  
+  ```md
+  # example-newpackage
+  Description of the new example package
+  ```
+
 ## Resources
 - [Example repository](https://github.com/rdarida/base-scripts)
 
