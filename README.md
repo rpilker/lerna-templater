@@ -5,3 +5,17 @@
   <img src="https://david-dm.org/rdarida/lerna-templater/dev-status.svg" alt="devDependencies">
 </p>
 <hr>
+
+## Install
+```
+> npm i -D lerna-templater
+```
+
+## Usage
+```json
+"scripts": {
+  "create": "lerna-templater"
+}
+```
+
+## Resources
