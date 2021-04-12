@@ -1,0 +1,255 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>lerna-templater</title>
+	<meta name="description" content="Documentation for lerna-templater">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">lerna-templater</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>lerna-templater</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 align="center">lerna-templater</h1>
+				<p align="center">Generates Package from Template for a Lerna Monorepo</p>
+				<p align="center">
+					<a href="https://github.com/rdarida/lerna-templater/actions/workflows/release.yml" target="_blank" alt="GitHub Actions">
+						<img src="https://github.com/rdarida/lerna-templater/actions/workflows/release.yml/badge.svg" alt="Release">
+					</a>
+					<a href="https://sonarcloud.io/dashboard?id=rdarida_lerna-templater" target="_blank" alt="SonarCloud">
+						<img src="https://sonarcloud.io/api/project_badges/measure?project=rdarida_lerna-templater&metric=coverage" alt="coverage">
+					</a>
+				</p>
+				<hr>
+				<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
+					<h2>Installing</h2>
+				</a>
+				<p>You can get <strong><code>lerna-templater</code></strong> via <strong><a href="https://npmjs.org/package/lerna-templater">npm</a></strong>.</p>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">i</span><span style="color: #000000"> -</span><span style="color: #0070C1">D</span><span style="color: #000000"> </span><span style="color: #001080">lerna</span><span style="color: #000000">-</span><span style="color: #001080">templater</span>
+</code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<a href="#as-an-import" id="as-an-import" style="color: inherit; text-decoration: none;">
+					<h3>As an import</h3>
+				</a>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">TemplaterOptions</span><span style="color: #000000">, </span><span style="color: #001080">templater</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;lerna-template&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #008000">/**</span>
+<span style="color: #008000"> * </span><span style="color: #0000FF">@param</span><span style="color: #008000"> </span><span style="color: #267F99">{string}</span><span style="color: #008000"> </span><span style="color: #001080">cwd</span><span style="color: #008000"> The current working directory.</span>
+<span style="color: #008000"> * </span><span style="color: #0000FF">@param</span><span style="color: #008000"> </span><span style="color: #267F99">{TemplaterOptions}</span><span style="color: #008000"> </span><span style="color: #001080">options</span><span style="color: #008000"> The options for templater.</span>
+<span style="color: #008000"> */</span>
+<span style="color: #795E26">templater</span><span style="color: #000000">(</span><span style="color: #001080">cwd</span><span style="color: #000000">, </span><span style="color: #001080">options</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#as-a-commandline-tool" id="as-a-commandline-tool" style="color: inherit; text-decoration: none;">
+					<h3>As a commandline tool</h3>
+				</a>
+				<pre><code><span style="color: #001080">npx</span><span style="color: #000000"> </span><span style="color: #001080">lerna</span><span style="color: #000000">-</span><span style="color: #001080">templater</span><span style="color: #000000"> -</span><span style="color: #001080">n</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Name of the new package&quot;</span><span style="color: #000000"> -</span><span style="color: #001080">d</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Description of the new package&quot;</span>
+</code></pre>
+				<p>or</p>
+				<pre><code class="language-json"><span style="color: #A31515">&quot;scripts&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;create&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;lerna-templater&quot;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">run</span><span style="color: #000000"> </span><span style="color: #001080">create</span><span style="color: #000000"> -- -</span><span style="color: #001080">n</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Name of the new package&quot;</span><span style="color: #000000"> -</span><span style="color: #001080">d</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Description of the new package&quot;</span>
+</code></pre>
+				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+					<h2>API</h2>
+				</a>
+				<a href="#templatercwd-optioins" id="templatercwd-optioins" style="color: inherit; text-decoration: none;">
+					<h3><code>templater(cwd, optioins)</code></h3>
+				</a>
+				<p>Generates a new package from <strong><code>cwd</code>/<code>options.template</code></strong> directory into <strong><code>cwd</code>/<code>options.packages</code>/<code>options.name</code></strong> directory. The <strong><code>cwd</code></strong> argument is the current working directory.</p>
+				<a href="#templateroptions" id="templateroptions" style="color: inherit; text-decoration: none;">
+					<h3><code>TemplaterOptions</code></h3>
+				</a>
+				<ul>
+					<li><strong><code>name</code></strong> <strong>string</strong>, <strong>required</strong><br>The name of the new package</li>
+					<li><strong><code>description</code></strong> <strong>string</strong>, <strong>optional</strong><br>The description of the new package.</li>
+					<li><strong><code>scope</code></strong> <strong>string</strong>, <strong>optional</strong><br>The scope of the new package. Default value is the scope of the <em>main package.json</em>.</li>
+					<li><strong><code>packages</code></strong> <strong>string</strong>, <strong>optional</strong><br>The relative path of the packages directory. Default value is the first element of the <em>lerna.json&#39;s packages array</em>.</li>
+					<li><strong><code>template</code></strong> <strong>string</strong>, <strong>optional</strong><br>The relative path of the template directory. Default values is <em>__template__</em>.</li>
+				</ul>
+				<a href="#mustache-templating" id="mustache-templating" style="color: inherit; text-decoration: none;">
+					<h3>Mustache templating</h3>
+				</a>
+				<p>The <strong>lerna-templater</strong> uses <a href="https://npmjs.org/packages/mustache">Mustache.js</a> for templating. If the <em>template</em> directory contains files which ends with <strong>.mustache</strong>, the templater will render them with Mustache.js. After the rendering, the <strong>.mustache</strong> extension will be removed from the filename. For example: <code>package.json.mustache</code> will be saved as <code>package.json</code>.</p>
+				<a href="#available-tags" id="available-tags" style="color: inherit; text-decoration: none;">
+					<h4>Available tags:</h4>
+				</a>
+				<ul>
+					<li><code>{{{name}}}</code> - The name of the new package.</li>
+					<li><code>{{{descriptio}}}</code> - The description of the new package.</li>
+					<li><code>{{{scope}}}</code> - The scope of the new package.</li>
+					<li><code>{{{packages}}}</code> - The relative path of the packages (output) directory.</li>
+					<li><code>{{{template}}}</code> - The relative path of the template (input) directory.</li>
+					<li><code>{{{version}}}</code> - The version of the new package.</li>
+					<li><code>{{{repoDir}}}</code> - The relative path of the new package in the repository.</li>
+				</ul>
+				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+					<h3>Example</h3>
+				</a>
+				<a href="#directory-structure" id="directory-structure" style="color: inherit; text-decoration: none;">
+					<h4>Directory structure</h4>
+				</a>
+				<pre><code><span style="color: #000000">.</span>
+<span style="color: #000000">├── </span><span style="color: #001080">__template__</span><span style="color: #000000">/</span>
+<span style="color: #000000">|   ├── </span><span style="color: #001080">package</span><span style="color: #000000">.</span><span style="color: #001080">json</span><span style="color: #000000">.</span><span style="color: #001080">mustache</span>
+<span style="color: #000000">|   └── </span><span style="color: #0070C1">README</span><span style="color: #000000">.</span><span style="color: #001080">md</span><span style="color: #000000">.</span><span style="color: #001080">mustache</span>
+<span style="color: #000000">├── </span><span style="color: #001080">packages</span><span style="color: #000000">/</span>
+<span style="color: #000000">├── </span><span style="color: #001080">lerna</span><span style="color: #000000">.</span><span style="color: #001080">json</span>
+<span style="color: #000000">└── </span><span style="color: #001080">package</span><span style="color: #000000">.</span><span style="color: #001080">json</span>
+</code></pre>
+				<a href="#content-of-the-files" id="content-of-the-files" style="color: inherit; text-decoration: none;">
+					<h4>Content of the files</h4>
+				</a>
+				<ul>
+					<li>__template__/<strong>package.json.mustache</strong>:  <pre><code class="language-json"><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;name&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;{{{scope}}}{{{name}}}&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;description&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;{{{description}}}&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;version&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;{{{version}}}&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;repository&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">    </span><span style="color: #0451A5">&quot;directory&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;{{{repoDir}}}&quot;</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+</code></pre>
+					</li>
+					<li>__template__/<strong>README.md.mustache</strong>:  <pre><code class="language-md"># {{{name}}}
+{{{description}}}
+</code></pre>
+					</li>
+					<li><strong>lerna.json</strong>:  <pre><code class="language-json"><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;packages&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;packages/*&quot;</span>
+<span style="color: #000000">  ],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;version&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;0.0.0&quot;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+					</li>
+					<li><strong>package.json</strong>:  <pre><code class="language-json"><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;name&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;@examplescope/example-monorepo&quot;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+					</li>
+				</ul>
+				<a href="#output" id="output" style="color: inherit; text-decoration: none;">
+					<h4>Output</h4>
+				</a>
+				<p>Running the  <code>npx lerna-templater -n &quot;example-newpackage&quot; -d &quot;Description for the new example package&quot;</code> command will result this output:</p>
+				<ul>
+					<li><strong>packages/example-newpackage</strong> directory</li>
+					<li><strong>package.json</strong> and <strong>README.md</strong> in the <em>packages/example-newpackage</em> directory</li>
+					<li>package.json:  <pre><code class="language-json"><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;name&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;@examplescope/example-newpackage&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;description&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Description for the new example package&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;version&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;0.0.0&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;repository&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">    </span><span style="color: #0451A5">&quot;directory&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;packages/example-newpackage&quot;</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+</code></pre>
+					</li>
+					<li>README.md:  <pre><code class="language-md"># example-newpackage
+Description of the new example package
+</code></pre>
+					</li>
+				</ul>
+				<a href="#resources" id="resources" style="color: inherit; text-decoration: none;">
+					<h2>Resources</h2>
+				</a>
+				<ul>
+					<li><a href="https://github.com/rdarida/base-scripts">Example repository</a></li>
+				</ul>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p>The <strong>lerna-templater</strong> is released under the MIT license.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/get_scope.html">get-<wbr>scope</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/index.html">index</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
