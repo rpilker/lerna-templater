@@ -8,8 +8,6 @@
   <a href="https://sonarcloud.io/dashboard?id=rdarida_lerna-templater" target="_blank" alt="SonarCloud">
     <img src="https://sonarcloud.io/api/project_badges/measure?project=rdarida_lerna-templater&metric=coverage" alt="coverage">
   </a>
-
-  <img src="https://api.dependabot.com/badges/status?host=github&repo=rdarida/lerna-templater" alt="Dependabot">
 </p>
 <hr>
 
