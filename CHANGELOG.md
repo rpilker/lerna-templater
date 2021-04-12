@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.18](https://github.com/rdarida/lerna-templater/compare/v1.2.17...v1.2.18) (2021-04-12)
+
+
+### Bug Fixes
+
+* pull-request.yml ([27201aa](https://github.com/rdarida/lerna-templater/commit/27201aa5295cbaa55ae0e2e5e748fbfe4923b7dc))
+* workflow naming ([542f203](https://github.com/rdarida/lerna-templater/commit/542f2033960c5d25a4d94484987cfc60f9e18de0))
+
 ### [1.2.17](https://github.com/rdarida/lerna-templater/compare/v1.2.16...v1.2.17) (2021-04-11)
 
 ### [1.2.16](https://github.com/rdarida/lerna-templater/compare/v1.2.15...v1.2.16) (2021-03-31)
