@@ -67,32 +67,20 @@ function copyTemplate(cwd: string, template: string, target: string): boolean {
   return true;
 }
 
-function flatten(array: Array<any>, mutable: boolean = false) {
-  var toString = Object.prototype.toString;
-  var arrayTypeStr = '[object Array]';
+// function flatten(array: Array<any>): Array<any> {
+//   // var flattenedArray:Array<any> = [];
+//   // for (var i = 0; i < array.length; i++) {
+//   //   if (Array.isArray(array[i])) {
+//   //     flattenedArray = flattenedArray.concat(flatten(array[i]));
+//   //   } else {
+//   //     flattenedArray.push(array[i]);
+//   //   }
+//   // }
+//   // return flattenedArray;
+//   return array.reduce
+// }
 
-  const result:Array<any> = [];
-  var nodes = (mutable && array) || array.slice();
-  var node;
-
-  if (!array.length) {
-      return result;
-  }
-
-  node = nodes.pop();
-
-  do {
-      if (toString.call(node) === arrayTypeStr) {
-          nodes.push.apply(nodes, node);
-      } else {
-          result.push(node);
-      }
-  } while (nodes.length && (node = nodes.pop()) !== undefined);
-
-  result.reverse();
-  return result;
-}
-
+const flatten = (array: Array<any>): Array<any> => array.reduce((flattened, entry) => flattened.concat(Array.isArray(entry) ? flatten(entry) : entry), [])
 
 function getMustacheFiles(target: string, relative = ''): string[] {
   return flatten(readdirSync(target).map((f) => {
