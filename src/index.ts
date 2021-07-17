@@ -7,6 +7,7 @@ import {
   readFileSync,
   writeFileSync
 } from 'fs-extra';
+import { lstatSync } from 'fs';
 import mustache from 'mustache';
 import { sync as rimraf } from 'rimraf';
 import { getScope } from './get-scope';
@@ -66,8 +67,43 @@ function copyTemplate(cwd: string, template: string, target: string): boolean {
   return true;
 }
 
-function getMustacheFiles(target: string): string[] {
-  return readdirSync(target).filter((f) => f.endsWith('.mustache'));
+function flatten(array: Array<any>, mutable: boolean = false) {
+  var toString = Object.prototype.toString;
+  var arrayTypeStr = '[object Array]';
+
+  const result:Array<any> = [];
+  var nodes = (mutable && array) || array.slice();
+  var node;
+
+  if (!array.length) {
+      return result;
+  }
+
+  node = nodes.pop();
+
+  do {
+      if (toString.call(node) === arrayTypeStr) {
+          nodes.push.apply(nodes, node);
+      } else {
+          result.push(node);
+      }
+  } while (nodes.length && (node = nodes.pop()) !== undefined);
+
+  result.reverse();
+  return result;
+}
+
+
+function getMustacheFiles(target: string, relative = ''): string[] {
+  return flatten(readdirSync(target).map((f) => {
+    if (lstatSync(join(target, f)).isFile()) {
+      if (f.endsWith('.mustache')) {
+        return relative ? join(relative, f) : f;
+       }
+       return [];
+    }
+    return getMustacheFiles(join(target, f), relative ? join(relative, f) : f);
+  }));
 }
 
 /**
