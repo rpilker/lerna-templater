@@ -1,5 +1,5 @@
 import { sync as rimraf } from 'rimraf';
-import { mkdirSync, readFileSync } from 'fs-extra';
+import { mkdirSync, readFileSync, BaseEncodingOptions } from 'fs-extra';
 import { resolve, join } from 'path';
 import { templater, TemplaterOptions } from '../src';
 
@@ -10,11 +10,13 @@ const COVE = resolve(__dirname, 'coverage');
 const FILES = [
   ['package.json', 'package.test.json'],
   ['README.md', 'README.test.md'],
+  ['src/index.js', 'src/index_test.js'],
   ['package.test.json', 'package.test.json'],
+  ['src/index_test.js', 'src/index_test.js'],
   ['README.test.md', 'README.test.md']
 ];
 
-const FILE_OPTS = {
+const FILE_OPTS:{ encoding: BufferEncoding; flag: string; } = {
   encoding: 'utf-8',
   flag: 'r'
 };
@@ -46,15 +48,9 @@ describe('Test index', () => {
     templater(__dirname, options);
 
     FILES.forEach((v) => {
-      const received = readFileSync(join(DIST, options.name, v[0]), {
-        encoding: 'utf-8',
-        flag: 'r'
-      });
+      const received = readFileSync(join(DIST, options.name, v[0]), FILE_OPTS);
 
-      const expected = readFileSync(join(TMPL, v[1]), {
-        encoding: 'utf-8',
-        flag: 'r'
-      });
+      const expected = readFileSync(join(TMPL, v[1]), FILE_OPTS);
       expect(received).toEqual(expected);
     });
   });
@@ -81,15 +77,9 @@ describe('Test index', () => {
     templater(__dirname, options);
 
     FILES.forEach((v) => {
-      const received = readFileSync(join(COVE, options.name, v[0]), {
-        encoding: 'utf-8',
-        flag: 'r'
-      });
+      const received = readFileSync(join(COVE, options.name, v[0]), FILE_OPTS);
 
-      const expected = readFileSync(join(TMPL, v[1]), {
-        encoding: 'utf-8',
-        flag: 'r'
-      });
+      const expected = readFileSync(join(TMPL, v[1]), FILE_OPTS);
       expect(received).toEqual(expected);
     });
   });

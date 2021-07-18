@@ -67,19 +67,6 @@ function copyTemplate(cwd: string, template: string, target: string): boolean {
   return true;
 }
 
-// function flatten(array: Array<any>): Array<any> {
-//   // var flattenedArray:Array<any> = [];
-//   // for (var i = 0; i < array.length; i++) {
-//   //   if (Array.isArray(array[i])) {
-//   //     flattenedArray = flattenedArray.concat(flatten(array[i]));
-//   //   } else {
-//   //     flattenedArray.push(array[i]);
-//   //   }
-//   // }
-//   // return flattenedArray;
-//   return array.reduce
-// }
-
 const flatten = (array: Array<any>): Array<any> => array.reduce((flattened, entry) => flattened.concat(Array.isArray(entry) ? flatten(entry) : entry), [])
 
 function getMustacheFiles(target: string, relative = ''): string[] {
